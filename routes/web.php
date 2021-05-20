@@ -17,3 +17,8 @@ Route::get('/',  'App\Http\Controllers\SiteController@home' ) -> name('home');
 Route::get('/shop',  'App\Http\Controllers\SiteController@shop' ) -> name('shop');
 Route::get('/about',  'App\Http\Controllers\SiteController@about' ) -> name('about');
 Route::get('/cantact',  'App\Http\Controllers\SiteController@cantact' ) -> name('cantact');
+
+//Admin routes
+Route::prefix('admin')->group(function () {
+   Route::resource('books', 'App\Http\Controllers\Admin\BooksController');
+});
