@@ -34,36 +34,51 @@
 				</div>
 				<div class="col-md-6 animate-box">
 					<h3>Aloqa qiling</h3>
-					<form action="#">
+					<form action="{{route('cantact.store')}}" method="POST">
+						@if(session()->has('success'))
+					<div class="alert alert-success">
+						{{session()->get('success')}}
+					</div>
+						@endif
+						@if ($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
+							@csrf
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="Isminggiz">
+								<input type="text" id="fname" name="first_name" class="form-control" value="{{old('first_name')}}" placeholder="Isminggiz">
 							</div>
 							<div class="col-md-6">
 								<!-- <label for="lname">Last Name</label> -->
-								<input type="text" id="lname" class="form-control" placeholder="Familiyangiz">
+								<input type="text" id="lname" class="form-control" name="last_name" value="{{old('last_name')}}" placeholder="Familiyangiz">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Pochta manzilinggiz">
+								<input type="text" id="email" class="form-control" name="email" value="{{old('email')}}" placeholder="Pochta manzilinggiz">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="subject">Subject</label> -->
-								<input type="text" id="subject" class="form-control" placeholder="Xabaringgizning mavzusi">
+								<input type="text" id="subject" class="form-control" name="subject" value="{{old('subject')}}" placeholder="Xabaringgizning mavzusi">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="message">Message</label> -->
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Xabaringgizni kiriting"></textarea>
+								<textarea name="message" id="message" cols="30" rows="10" class="form-control" value="{{old('message')}}" placeholder="Xabaringgizni kiriting..."></textarea>
 							</div>
 						</div>
 						<div class="form-group">
