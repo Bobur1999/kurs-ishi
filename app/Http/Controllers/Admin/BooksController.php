@@ -14,7 +14,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-        return view('Admin/books/index');
+        return view('admin.books.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.books.create');
     }
 
     /**
@@ -35,7 +35,56 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+
+            'nom'=> 'required',
+            // 'img' => 'required|file|mimes:jpeg,jpg,png',
+            'avtor'=> 'required',
+            'avtor_id'=> 'required',
+            'tur'=> 'required',
+            'tur_id'=> 'required',
+            'qisqacha'=> 'required',
+            'narx'=> 'required',
+            'nashriyot'=> 'required',
+            'nashriyot_id'=> 'required',
+            'til'=> 'required',
+            'til_id'=> 'required',
+            'varaqsoni'=> 'required',
+            'yili'=> 'required'
+        ]);
+
+        // //Upload image to storage
+        // $img_name=$request->file('img')->store('dunyo', ['disk' => 'public']);
+        
+        // // Create thumbnail
+        // $full_path=storage_path('app/public/'.$img_name);
+        // $full_thumb_path=storage_path('app/public/thumbs/'.$img_name);
+        // $thumb=Image::make($full_path);
+        
+        // // kvadrat
+        // $thumb->fit(350, 350, function($constraint){
+        //     $constraint->aspectRatio();
+        // })->save($full_thumb_path);
+
+        book::create([
+            'nom' => $request->post('nom'),
+            // 'img' => $img_name,
+            // 'thumb' => 'thumbs/'.$img_name,
+            'avtor'=> $request->post('avtor'),
+            'avtor_id'=> $request->post('avtor_id'),
+            'tur'=> $request->post('tur'),
+            'tur_id'=> $request->post('tur_id'),
+            'qisqacha'=> $request->post('qisqacha'),
+            'narx'=> $request->post('narx'),
+            'nashriyot'=> $request->post('nashriyot'),
+            'nashriyot_id'=> $request->post('nashriyot_id'),
+            'til'=> $request->post('til'),
+            'til_id'=> $request->post('til_id'),
+            'varaqsoni'=> $request->post('varaqsoni'),
+            'yili'=> $request-post('yili'),
+        ]);
+
+        return redirect()->route('books.index')->with('success', 'Item created!');
     }
 
     /**
