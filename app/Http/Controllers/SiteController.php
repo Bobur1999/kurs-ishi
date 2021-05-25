@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Feedback;
 
 use Illuminate\Http\Request;
 
@@ -25,6 +26,14 @@ class SiteController extends Controller
             'email' => 'required|email',
             'subject' => 'required|min:10',
             'message' => 'required|max:2048'
+        ]);
+
+        Feedback::create([
+            'first_name' => $request->post('first_name'),
+            'last_name' => $request->post('last_name'),
+            'email' => $request->post('email'),
+            'subject' => $request->post('subject'),
+            'message' => $request->post('message')
         ]);
 
         return redirect()
