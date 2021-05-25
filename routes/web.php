@@ -22,4 +22,5 @@ Route::post('/cantact', 'App\Http\Controllers\SiteController@feedbackStore')->na
 //Admin routes
 Route::prefix('admin')->group(function () {
    Route::resource('books', 'App\Http\Controllers\Admin\BooksController');
+   Route::resource('feedbacks', 'App\Http\Controllers\Admin\FeedbacksController');
 });

@@ -37,15 +37,15 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('books.index')}}">
           <i class="fas fa-fw fa-book"></i>
-          books
+          Kitoblar
         </a>
       </li> 
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('feedbacks.index')}}">
           <i class="fas fa-fw fa-envelope"></i>
-          feedback
+          Xabarlar
         </a>
       </li> 
   
@@ -165,11 +165,21 @@
 
         </nav>
         <!-- End of Topbar -->
+<<<<<<< HEAD
       </div>
       <!-- End of Main Content -->
 
       @yield('content')
 
+=======
+
+        
+
+  @yield('content')
+      </div>
+      <!-- End of Main Content -->
+
+>>>>>>> b46db9bd3f0ac8cc9b649c430b84ae84869c949f
    <!-- Footer -->
    <footer class="sticky-footer bg-white">
       <div class="container my-auto">
