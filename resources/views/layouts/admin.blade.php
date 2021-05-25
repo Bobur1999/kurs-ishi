@@ -165,21 +165,13 @@
 
         </nav>
         <!-- End of Topbar -->
-<<<<<<< HEAD
+
+
+        @yield('content')
       </div>
       <!-- End of Main Content -->
 
-      @yield('content')
 
-=======
-
-        
-
-  @yield('content')
-      </div>
-      <!-- End of Main Content -->
-
->>>>>>> b46db9bd3f0ac8cc9b649c430b84ae84869c949f
    <!-- Footer -->
    <footer class="sticky-footer bg-white">
       <div class="container my-auto">
