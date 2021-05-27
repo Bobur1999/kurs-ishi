@@ -74,6 +74,10 @@
                 <label for="">varaqsoni</label>
                 <input class="form-control" name="varaqsoni" type="text">
             </div>
+            <div class="form-group">
+                <label for="">yili</label>
+                <input class="form-control" name="yili" type="text">
+            </div>
             <button class="btn btn-sm btn-success">Saqlash</button>
         
         </form>

@@ -50,56 +50,29 @@
               <th width="180px">Amallar</th>
           </thead>
           <tbody>
+              @foreach($books as $book)
             <tr>
-              <td> 
-                <img class="img img-thumbnail" width="80px" src=" ">
-              </td>
-              <td> 
-                  nomi
-              </td>
-              <td> 
-                  avtori
-              </td>
-              <td> 
-                  1
-              </td>
-              <td> 
-                  badiiy
-              </td>
-              <td> 
-                  2
-              </td>
-              <td> 
-                  5000
-              </td>
-              <td> 
-                  book
-              </td>
-              <td> 
-                  3
-              </td>
-              <td> 
-                  uzbek
-              </td>
-              <td> 
-                  4
-              </td>
-              <td> 
-                  100
-              </td>
-              <td> 
-                  2020
-              </td>
-              <td> 
-                  7
-              </td>
-              <td> 
-                  11.01.2021
-              </td>
-              <td> 
-                  $$.$$.$$
-              </td>
-              <td>
+                
+
+                        <td> 
+                        <img class="img img-thumbnail" width="80px" src=" ">
+                        </td>
+                        <td>{{$book->nom}}</td>
+                        <td>{{$book->avtor}}</td>
+                        <td>{{$book->avtor_id}}</td>
+                        <td>{{$book->tur}}</td>
+                        <td>{{$book->tur_id}}</td>
+                        <td>{{$book->narx}}</td>
+                        <td>{{$book->nashriyot}}</td>
+                        <td>{{$book->nashriyot_id}}</td>
+                        <td>{{$book->til}}</td>
+                        <td>{{$book->til_id}}</td>
+                        <td>{{$book->varaqsoni}}</td>
+                        <td>{{$book->yili}}</td>  
+                        <td>{{$book->views}}</td>
+                        <td>{{$book->created_at}}</td>
+                        <td>{{$book->updated_at}}</td>
+                <td>            
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     <a href="" class="btn btn-primary">
                         <i class="fa fa-eye"></i> Ko'rish
@@ -124,6 +97,7 @@
                 </div>
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
     <!-- </div> -->

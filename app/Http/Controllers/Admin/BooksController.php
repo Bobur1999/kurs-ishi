@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\book;
+use Image;
 
 class BooksController extends Controller
 {
@@ -14,7 +16,11 @@ class BooksController extends Controller
      */
     public function index()
     {
-        return view('admin.books.index');
+        $books = book::latest()->paginate(10);
+
+        $links = $books->links();
+
+        return view('admin.books.index', compact('books', 'links'));
     }
 
     /**
@@ -38,7 +44,7 @@ class BooksController extends Controller
         $request -> validate([
 
             'nom'=> 'required',
-            // 'img' => 'required|file|mimes:jpeg,jpg,png',
+            'img' => 'required|file|mimes:jpeg,jpg,png',
             'avtor'=> 'required',
             'avtor_id'=> 'required',
             'tur'=> 'required',
@@ -53,13 +59,13 @@ class BooksController extends Controller
             'yili'=> 'required'
         ]);
 
-        // //Upload image to storage
-        // $img_name=$request->file('img')->store('dunyo', ['disk' => 'public']);
+        //Upload image to storage
+        $img_name=$request->file('img')->store('dunyo', ['disk' => 'public']);
         
-        // // Create thumbnail
-        // $full_path=storage_path('app/public/'.$img_name);
-        // $full_thumb_path=storage_path('app/public/thumbs/'.$img_name);
-        // $thumb=Image::make($full_path);
+        // Create thumbnail
+        $full_path=storage_path('app/public/'.$img_name);
+        $full_thumb_path=storage_path('app/public/thumbs/'.$img_name);
+        $thumb=Image::make($full_path);
         
         // // kvadrat
         // $thumb->fit(350, 350, function($constraint){
@@ -68,8 +74,8 @@ class BooksController extends Controller
 
         book::create([
             'nom' => $request->post('nom'),
-            // 'img' => $img_name,
-            // 'thumb' => 'thumbs/'.$img_name,
+            'img' => $img_name,
+            'thumb' => 'thumbs/'.$img_name,
             'avtor'=> $request->post('avtor'),
             'avtor_id'=> $request->post('avtor_id'),
             'tur'=> $request->post('tur'),
@@ -81,10 +87,10 @@ class BooksController extends Controller
             'til'=> $request->post('til'),
             'til_id'=> $request->post('til_id'),
             'varaqsoni'=> $request->post('varaqsoni'),
-            'yili'=> $request-post('yili'),
+            'yili'=> $request->post('yili'),
         ]);
 
-        return redirect()->route('books.index')->with('success', 'Item created!');
+        return redirect()->route('books.index')->with('success', 'Yangi kitob qo`shildi!');
     }
 
     /**
