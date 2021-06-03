@@ -20,7 +20,13 @@ Route::get('/cantact',  'App\Http\Controllers\SiteController@cantact' ) -> name(
 Route::post('/cantact', 'App\Http\Controllers\SiteController@feedbackStore')->name('cantact.store');
 
 //Admin routes
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
+   Route::get('/', function (){
+      return redirect()->route('books.index');
+   });
    Route::resource('books', 'App\Http\Controllers\Admin\BooksController');
    Route::resource('feedbacks', 'App\Http\Controllers\Admin\FeedbacksController');
 });
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
