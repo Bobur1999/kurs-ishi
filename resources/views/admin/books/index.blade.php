@@ -55,7 +55,7 @@
                 
 
                         <td> 
-                        <img class="img img-thumbnail" width="80px" src=" ">
+                        <img class="img img-thumbnail" width="80px" src="{{'/storage/'.$book->img}}">
                         </td>
                         <td>{{$book->nom}}</td>
                         <td>{{$book->avtor}}</td>
@@ -74,7 +74,7 @@
                         <td>{{$book->updated_at}}</td>
                 <td>            
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <a href="" class="btn btn-primary">
+                    <a href="{{route('books.show',$book->id)}}" class="btn btn-primary">
                         <i class="fa fa-eye"></i> Ko'rish
                     </a>
                     
@@ -82,13 +82,13 @@
                       <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       </button>
                       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="">
+                        <a class="dropdown-item" href="{{route('books.edit', $book->id)}}">
                             <i class="fa fa-edit"></i> Tahrirlash 
                         </a>
 
-                        <form method="POST" action="">
-                            csrf
-                            method(DELETE)
+                        <form method="POST" action="{{route('books.destroy', $book->id)}}">
+                            @csrf
+                            @method('DELETE')
                             <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> O'chirish</button>
                         </form> 
 
