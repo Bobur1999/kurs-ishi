@@ -55,7 +55,7 @@
                 
 
                         <td> 
-                        <img class="img img-thumbnail" width="80px" src="{{'/storage/'.$book->img}}">
+                          <img class="img img-thumbnail" width="80px" src="{{'/storage/'.$book->thumb}}">
                         </td>
                         <td>{{$book->nom}}</td>
                         <td>{{$book->avtor}}</td>
