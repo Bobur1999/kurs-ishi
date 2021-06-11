@@ -52,10 +52,9 @@
           <tbody>
               @foreach($books as $book)
             <tr>
-                
 
                         <td> 
-                          <img class="img img-thumbnail" width="80px" src="{{'/storage/'.$book->thumb}}">
+                          <img class="img img-thumbnail" width="80px" src="/storage/{{$book->thumb}}">
                         </td>
                         <td>{{$book->nom}}</td>
                         <td>{{$book->avtor}}</td>

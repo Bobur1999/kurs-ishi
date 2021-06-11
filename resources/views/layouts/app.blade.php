@@ -51,6 +51,20 @@
 						</li>
 						<li><a href="{{route('about')}}">About</a></li>
 						<li><a href="{{route('cantact')}}">Contact</a></li>
+						@if(!auth()->user())
+						<li><a href="{{route('customer-login')}}">Login</a></li>
+						
+						@else
+						
+							<li class="has-dropdown">
+							<a href="{{route('shop')}}">My Account</a>
+							<ul class="dropdown">
+								<li><a href="single.php">Single Shop</a></li>
+							</ul>
+						</li>
+							
+						
+						@endif
 					</ul>
 				</div>
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">

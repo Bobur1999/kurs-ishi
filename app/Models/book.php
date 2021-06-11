@@ -9,5 +9,5 @@ class book extends Model
 {
     public $table = 'book';
     
-    public $fillable = ['nom', 'img', 'thumbs', 'avtor', 'avtor_id', 'tur', 'tur_id', 'qisqacha', 'narx', 'nashriyot', 'nashriyot_id', 'til', 'til_id', 'varaqsoni', 'yili', 'views'];
+    public $fillable = ['nom', 'img', 'thumb', 'avtor', 'avtor_id', 'tur', 'tur_id', 'qisqacha', 'narx', 'nashriyot', 'nashriyot_id', 'til', 'til_id', 'varaqsoni', 'yili', 'views'];
 }
