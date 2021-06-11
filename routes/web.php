@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home',  'App\Http\Controllers\SiteController@home' ) -> name('home');
+Route::get('/',  'App\Http\Controllers\SiteController@home' ) -> name('home');
 Route::get('/shop',  'App\Http\Controllers\SiteController@shop' ) -> name('shop');
 Route::get('/about',  'App\Http\Controllers\SiteController@about' ) -> name('about');
 Route::get('/cantact',  'App\Http\Controllers\SiteController@cantact' ) -> name('cantact');
@@ -21,6 +21,9 @@ Route::post('/cantact', 'App\Http\Controllers\SiteController@feedbackStore')->na
 Route::get('/customer-register', 'App\Http\Controllers\CustomerController@create')->name('customer-register');
 Route::post('/customer-store',  'App\Http\Controllers\CustomerController@store')->name('customer-store');
 Route::get('/customer-login', 'App\Http\Controllers\CustomerController@customerLogin')->name('customer-login');
+Route::get('/show-book/{id}','App\Http\Controllers\SiteController@showBook')->name('showBook');
+Route::get('/order/{id}','App\Http\Controllers\SiteController@order')->name('order');
+Route::get('/orderStore','App\Http\Controllers\OrderController@orderStore')->name('orderStore');
 //Admin routes
 Route::prefix('admin')->middleware('auth')->group(function () {
    Route::get('/', function (){

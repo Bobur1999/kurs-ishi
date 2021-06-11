@@ -29,10 +29,10 @@
 				@foreach($books as $book)
 					<div class="col-md-4 text-center animate-box">
 						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-1.jpg);">
+							<div class="product-grid" style="background-image:url(/storage/{{$book->img}});">
 								<div class="inner">
 									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="{{route('showBook',$book->id)}}" class="icon"><i class="icon-shopping-bag"></i></a>
 										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
 									</p>
 								</div>

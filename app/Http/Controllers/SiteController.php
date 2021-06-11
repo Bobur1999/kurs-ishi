@@ -12,7 +12,7 @@ class SiteController extends Controller
         return view('home');
     }
     public function shop(){
-        $books = book::all()->paginate(10);
+        $books = book::all();
         return view('shop',compact('books'));
     }
     public function about(){
@@ -41,5 +41,13 @@ class SiteController extends Controller
         return redirect()
             ->route('cantact')
             ->with('success', 'Xabaringgiz uchun rahmat! Tez orada siz bilan bog`lanamiz!');
+    }
+    public function showBook($id){
+        $book = book::findOrFail($id);
+        return view('showBook',compact('book'));
+    }
+    public function order($id){
+        $book=book::findOrFail($id);
+        return view('order',compact('book'));
     }
 }
