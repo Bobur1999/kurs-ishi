@@ -34,14 +34,9 @@
               <th width="100px">Rasm</th>
               <th>Nomi</th>
               <th>Avtor</th>
-              <th>Avtor_id</th>
-              <th>Tur</th>
-              <th>Tur_id</th>
               <th>Narx</th>
               <th>Nashriyot</th>
-              <th>Nashriyot_id</th>
               <th>Til</th>
-              <th>Til_id</th>
               <th>Varaqsoni</th>
               <th>Yili</th>
               <th>Ko'rildi</th>
@@ -58,14 +53,9 @@
                         </td>
                         <td>{{$book->nom}}</td>
                         <td>{{$book->avtor}}</td>
-                        <td>{{$book->avtor_id}}</td>
-                        <td>{{$book->tur}}</td>
-                        <td>{{$book->tur_id}}</td>
                         <td>{{$book->narx}}</td>
                         <td>{{$book->nashriyot}}</td>
-                        <td>{{$book->nashriyot_id}}</td>
                         <td>{{$book->til}}</td>
-                        <td>{{$book->til_id}}</td>
                         <td>{{$book->varaqsoni}}</td>
                         <td>{{$book->yili}}</td>  
                         <td>{{$book->views}}</td>

@@ -52,14 +52,22 @@
 						<li><a href="{{route('about')}}">About</a></li>
 						<li><a href="{{route('cantact')}}">Contact</a></li>
 						@if(!auth()->user())
-						<li><a href="{{route('customer-login')}}">Login</a></li>
+						<li><a href="{{route('login')}}">Login</a></li>
 						
 						@else
 						
 							<li class="has-dropdown">
-							<a href="{{route('shop')}}">My Account</a>
+							<a href="">My Account</a>
 							<ul class="dropdown">
-								<li><a href="single.php">Single Shop</a></li>
+								<li>
+									<form action="{{route('logout')}}" method="POST">
+										@csrf
+										<button style="background: none; border: none; " type="submit">Logout</button>
+									</form>
+								</li>
+								<li>
+									<a href="">My order</a>
+								</li>
 							</ul>
 						</li>
 							

@@ -14,7 +14,7 @@ class AlterBookAddQisqacha extends Migration
     public function up()
     {
         Schema::table('book', function(Blueprint $table){
-            $table->string('qisqacha')->after('tur_id');
+            $table->string('qisqacha')->after('avtor');
         });
     }
 

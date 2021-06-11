@@ -34,18 +34,7 @@
                 <label for="">Avtor</label>
                 <input class="form-control" name="avtor" type="text">
             </div>
-            <div class="form-group">
-                <label for="">Avtor_id</label>
-                <input class="form-control" name="avtor_id" type="text"></input>
-            </div>
-            <div class="form-group">
-                <label for="">tur</label>
-                <input class="form-control" name="tur" type="text">
-            </div>
-            <div class="form-group">
-                <label for="">tur_id</label>
-                <input class="form-control" name="tur_id" type="text">
-            </div>
+            
             <div class="form-group">
                 <label for="">qisqacha</label>
                 <textarea class="form-control" name="qisqacha" id="" cols="30" rows="10"></textarea>
@@ -58,18 +47,12 @@
                 <label for="">nashriyot</label>
                 <input class="form-control" name="nashriyot" type="text">
             </div>
-            <div class="form-group">
-                <label for="">nashriyot_id</label>
-                <input class="form-control" name="nashriyot_id" type="text">
-            </div>
+           
             <div class="form-group">
                 <label for="">til</label>
                 <input class="form-control" name="til" type="text">
             </div>
-            <div class="form-group">
-                <label for="">til_id</label>
-                <input class="form-control" name="til_id" type="text">
-            </div>
+           
             <div class="form-group">
                 <label for="">varaqsoni</label>
                 <input class="form-control" name="varaqsoni" type="text">

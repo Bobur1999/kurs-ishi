@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Feedback;
+use App\Models\book;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class SiteController extends Controller
         return view('home');
     }
     public function shop(){
-        return view('shop');
+        $books = book::all()->paginate(10);
+        return view('shop',compact('books'));
     }
     public function about(){
         return view('about');

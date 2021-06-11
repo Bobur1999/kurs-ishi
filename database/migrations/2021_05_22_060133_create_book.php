@@ -18,14 +18,9 @@ class CreateBook extends Migration
             $table->string('nom')->notNull();
             $table->string('img');
             $table->string('avtor')->notNull();
-            $table->integer('avtor_id')->notNull();
-            $table->string('tur')->notNull();
-            $table->integer('tur_id')->notNull();
             $table->integer('narx')->notNull();
             $table->string('nashriyot')->notNull();
-            $table->integer('nashriyot_id')->notNull();
             $table->string('til')->notNull();
-            $table->integer('til_id')->notNull();
             $table->integer('varaqsoni')->notNull();
             $table->integer('yili')->notNull();
             $table->integer('views')->default(0);
