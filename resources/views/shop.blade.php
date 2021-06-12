@@ -1,14 +1,14 @@
     @extends('layouts/app', [ 'title' => 'shop'])
     @section('content')   
-    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(image/2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Product</h1>
-							<h2>Free html5 templates by <a href="https://themewagon.com/theme_tag/free/" target="_blank">Themewagon</a></h2>
+							<h2>Barcha kitoblar faqat siz uchun</h2>
+							
 						</div>
 					</div>
 				</div>
@@ -18,16 +18,9 @@
 	
 	<div id="fh5co-product">
 		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Cool Stuff</span>
-					<h2>Products.</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
 			<div class="row">
 				@foreach($books as $book)
-					<div class="col-md-4 text-center animate-box">
+					<div class="col-md-2 text-center animate-box">
 						<div class="product">
 							<div class="product-grid" style="background-image:url(/storage/{{$book->img}});">
 								<div class="inner">
@@ -38,14 +31,13 @@
 								</div>
 							</div>
 							<div class="desc">
-								<h3><a href="single.html">Hauteville Concrete Rocking Chair</a></h3>
-								<span class="price"></span>
+							<h3><a href="single.html">{{$book->nom}}</a></h3>
+								<span class="price">{{$book->narx}} so'm</span>
 							</div>
 						</div>
 					</div>
 				@endforeach
 			</div>
-			
 		</div>
 	</div>
     @endsection

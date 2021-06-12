@@ -43,35 +43,26 @@
 				</div>
 				<div class="col-md-6 col-xs-6 text-center menu-1">
 					<ul>
-						<li class="has-dropdown">
-							<a href="{{route('shop')}}">Shop</a>
-							<ul class="dropdown">
-								<li><a href="single.php">Single Shop</a></li>
-							</ul>
-						</li>
-						<li><a href="{{route('about')}}">About</a></li>
-						<li><a href="{{route('cantact')}}">Contact</a></li>
+						<li><a href="{{route('shop')}}">Kitoblar</a></li>
+						<li><a href="{{route('about')}}">Biz haqimizda</a></li>
+						<li><a href="{{route('cantact')}}">Aloqa</a></li>
 						@if(!auth()->user())
-						<li><a href="{{route('login')}}">Login</a></li>
-						
+						<li><a href="{{route('login')}}">Kirish</a></li>
 						@else
-						
 							<li class="has-dropdown">
-							<a href="">My Account</a>
+							<a href="">Mening accauntim</a>
 							<ul class="dropdown">
 								<li>
 									<form action="{{route('logout')}}" method="POST">
 										@csrf
-										<button style="background: none; border: none; " type="submit">Logout</button>
+										<button style="background: none; border: none; " type="submit">Chiqish</button>
 									</form>
 								</li>
 								<li>
-									<a href="">My order</a>
+									<a href="{{route('myorder')}}">My order</a>
 								</li>
 							</ul>
 						</li>
-							
-						
 						@endif
 					</ul>
 				</div>
@@ -79,19 +70,11 @@
 					<ul>
 						<li class="search">
 							<div class="input-group">
-						      <input type="text" placeholder="Search..">
+						      <input type="text" placeholder="qidirish..">
 						      <span class="input-group-btn">
 						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
 						      </span>
 						    </div>
-						</li>
-						<li class="shopping-cart">
-							<a href="#" class="cart">
-								<span>
-									<small>9</small>
-									<i class="icon-shopping-cart"> </i>
-								</span>
-							</a>
 						</li>
 					</ul>
 				</div>
@@ -102,66 +85,23 @@
 
     @yield('content')
 
-    <div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Newsletter</h2>
-					<p>Just stay tune for our latest Product. Now you can subscribe</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					<form class="form-inline">
-						<div class="col-md-6 col-sm-6">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<button type="submit" class="btn btn-default btn-block">Subscribe</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+    
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
-					<h3>Shop.</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+					<a href="{{route('home')}}">
+						<h3>Kitob.uz</h3>
+					</a>
+					<p>Faqat sizlar uchun</p>
 				</div>
+				
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
+						<li><a href="{{route('shop')}}">Kitoblar</a></li>
+						<li><a href="{{route('about')}}">Biz haqimizda</a></li>
+						<li><a href="{{route('cantact')}}">Aloqa</a></li>
 					</ul>
 				</div>
 			</div>
@@ -169,15 +109,15 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2018 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						<small class="block">&copy; 2021.</small> 
+						<small class="block">Yaratuvchilar: Rustamov Boburbek &amp; Shomuradov Murodjon</small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="https://instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li>
+							<li><a href="https://facebook.com/" target="_blank"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://linkedin.com/" target="_blank"><i class="icon-linkedin"></i></a></li>
+							<li><a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a></li>
 						</ul>
 					</p>
 				</div>

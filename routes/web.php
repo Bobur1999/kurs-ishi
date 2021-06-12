@@ -18,6 +18,8 @@ Route::get('/shop',  'App\Http\Controllers\SiteController@shop' ) -> name('shop'
 Route::get('/about',  'App\Http\Controllers\SiteController@about' ) -> name('about');
 Route::get('/cantact',  'App\Http\Controllers\SiteController@cantact' ) -> name('cantact');
 Route::post('/cantact', 'App\Http\Controllers\SiteController@feedbackStore')->name('cantact.store');
+Route::get('/batafsil/{id}',  'App\Http\Controllers\SiteController@batafsil' ) -> name('batafsil');
+Route::get('/my-order',  'App\Http\Controllers\SiteController@myorder' ) -> name('myorder');
 Route::get('/customer-register', 'App\Http\Controllers\CustomerController@create')->name('customer-register');
 Route::post('/customer-store',  'App\Http\Controllers\CustomerController@store')->name('customer-store');
 Route::get('/customer-login', 'App\Http\Controllers\CustomerController@customerLogin')->name('customer-login');

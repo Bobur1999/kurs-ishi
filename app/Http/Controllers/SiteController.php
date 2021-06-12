@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function home(){
-        return view('home');
+        $books = book::latest()->get();
+        return view('home',compact('books'));
     }
     public function shop(){
         $books = book::all();
@@ -17,6 +18,14 @@ class SiteController extends Controller
     }
     public function about(){
         return view('about');
+    }
+    public function batafsil($id){
+        $book=book::findOrFail($id);
+        return view('batafsil', compact('book'));
+    }
+    public function myorder(){
+        
+        return view('myorder');
     }
     public function cantact(){
         return view('cantact');
