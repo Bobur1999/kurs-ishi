@@ -32,7 +32,7 @@
 								<div class="inner">
 									<p>
 										<a href="{{route('showBook',$book->id)}}" class="icon"><i class="icon-shopping-bag"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+										<a href="{{route('batafsil', $book->id)}}" class="icon"><i class="icon-eye"></i></a>
 									</p>
 								</div>
 							</div>

@@ -32,7 +32,8 @@ class OrderController extends Controller
             'book_id' => $product->id,        
         ];
         $order->getOrderProducts()->create($product_data);
-        return view('home');
+        $books = book::latest(6)->get();
+        return view('home',compact('books'));
             
     }
 }

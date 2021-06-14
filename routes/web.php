@@ -20,6 +20,7 @@ Route::get('/cantact',  'App\Http\Controllers\SiteController@cantact' ) -> name(
 Route::post('/cantact', 'App\Http\Controllers\SiteController@feedbackStore')->name('cantact.store');
 Route::get('/batafsil/{id}',  'App\Http\Controllers\SiteController@batafsil' ) -> name('batafsil');
 Route::get('/my-order',  'App\Http\Controllers\SiteController@myorder' ) -> name('myorder');
+Route::get('/search',  'App\Http\Controllers\SiteController@search' ) -> name('search');
 Route::get('/customer-register', 'App\Http\Controllers\CustomerController@create')->name('customer-register');
 Route::post('/customer-store',  'App\Http\Controllers\CustomerController@store')->name('customer-store');
 Route::get('/customer-login', 'App\Http\Controllers\CustomerController@customerLogin')->name('customer-login');

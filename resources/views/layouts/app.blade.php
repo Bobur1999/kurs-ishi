@@ -66,18 +66,20 @@
 						@endif
 					</ul>
 				</div>
-				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
-					<ul>
-						<li class="search">
-							<div class="input-group">
-						      <input type="text" placeholder="qidirish..">
-						      <span class="input-group-btn">
-						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
-						      </span>
-						    </div>
-						</li>
-					</ul>
-				</div>
+				<form method="GET" action="{{route('search')}}">
+					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+						<ul>
+							<li class="search">
+								<div class="input-group">
+								<input type="text" name="key" placeholder="qidirish..">
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+								</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</form>
 			</div>
 			
 		</div>

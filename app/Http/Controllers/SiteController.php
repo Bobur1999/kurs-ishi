@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function home(){
-        $books = book::latest()->get();
+        $books = book::latest()->limit(6)->get();
         return view('home',compact('books'));
     }
     public function shop(){
-        $books = book::all();
+        $books = book::latest()->limit(6)->get();
         return view('shop',compact('books'));
     }
     public function about(){
@@ -58,5 +58,17 @@ class SiteController extends Controller
     public function order($id){
         $book=book::findOrFail($id);
         return view('order',compact('book'));
+    }
+    public function search(Request $request){
+        $key = $request->get('key');
+        $key = '%'.trim($key).'%';
+
+        $books = book::where('nom', 'LIKE', $key)
+                    ->orWhere('avtor', 'LIKE', $key)
+                    ->orWhere('nashriyot', 'LIKE', $key)
+                    ->orWhere('qisqacha', 'LIKE', $key)
+                    ->get();
+
+        return view('search', compact('books'));
     }
 }

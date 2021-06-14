@@ -26,12 +26,12 @@
 								<div class="inner">
 									<p>
 										<a href="{{route('showBook',$book->id)}}" class="icon"><i class="icon-shopping-bag"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+										<a href="{{route('batafsil', $book->id)}}" class="icon"><i class="icon-eye"></i></a>
 									</p>
 								</div>
 							</div>
 							<div class="desc">
-							<h3><a href="single.html">{{$book->nom}}</a></h3>
+							<h3><a href="{{route('batafsil', $book->id)}}">{{$book->nom}}</a></h3>
 								<span class="price">{{$book->narx}} so'm</span>
 							</div>
 						</div>
